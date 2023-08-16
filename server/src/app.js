@@ -1,27 +1,29 @@
-let express = require('express')
-const app = express()
+let express = require("express");
+let bodyParser = require("body-parser");
 
-app.get('/status', function (req, res) {
-    res.send('Hello nodejs server')
-})
+const app = express();
 
-app.get('/hello/:person', function (req,res) {
-    console.log('hello - ' + req.params.person)
-    res.send('sey hello eith' + req.params.person)
-})
-//get user by id
-app.get('/user/:userId', function (req, res) {
-    res.send('ดูข้อมูลผู้ใช้งาน')
-})
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-//get all user
-app.get('/user', function (req, res) {
-    res.send('เรียกข้อมูลผู้ใช้งาน')
-})
+require('./routes')(app)
 
-let port = 8081
+app.get("/status", function (req, res) {
+  res.send("Hello nodejs server belong to nayo");
+});
+
+app.get("/hello/:name", function (req, res) {
+  console.log("hello - " + req.params.name);
+  res.send("sey hello eith" + req.params.name);
+});
+
+app.post("/hello", function (req, res) {
+    res.send("OK you post -" + req.body.name);
+  });
+
+
+let port = 8081;
 
 app.listen(port, function () {
-    console.log('server running on ' + port)
-})
-
+  console.log("server running on " + port);
+});
