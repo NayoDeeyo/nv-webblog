@@ -1,5 +1,8 @@
 let express = require("express");
-let bodyParser = require("body-parser");
+let bodyParser = require("body-parser")
+const {sequelize} = require('./models')
+
+const config = require('./config/config')
 
 const app = express();
 
@@ -17,8 +20,10 @@ app.get("/hello/:name", function (req, res) {
   res.send("sey hello eith" + req.params.name);
 });
 
-let port = 8081;
+let port = proccss.cnv.PORT || config.port
 
-app.listen(port, function () {
-  console.log("server running on " + port);
-});
+sequelize.sync({force: false}).then(() => {
+    app.listen(port, function () {
+        console.log("server running on " + port);
+})
+})
