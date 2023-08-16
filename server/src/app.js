@@ -17,11 +17,6 @@ app.get("/hello/:name", function (req, res) {
   res.send("sey hello eith" + req.params.name);
 });
 
-app.post("/hello", function (req, res) {
-    res.send("OK you post -" + req.body.name);
-  });
-
-
 let port = 8081;
 
 app.listen(port, function () {
