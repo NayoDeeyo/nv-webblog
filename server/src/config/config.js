@@ -1,4 +1,4 @@
-module.export = {
+module.exports = {
   port: 8081,
   db: {
     database: process.env.DB_NAME || "nvWebsiteDb",
@@ -8,5 +8,5 @@ module.export = {
       dialect: process.env.DIALECT || "sqlite",
       storage: "./nvwebblog-db.sqlite",
     },
-  },
-};
+  }
+}

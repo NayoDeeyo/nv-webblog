@@ -20,10 +20,10 @@ app.get("/hello/:name", function (req, res) {
   res.send("sey hello eith" + req.params.name);
 });
 
-let port = proccss.cnv.PORT || config.port
+let port = process.env.PORT || config.port
 
 sequelize.sync({force: false}).then(() => {
-    app.listen(port, function () {
-        console.log("server running on " + port);
-})
+  app.listen(port, function () {
+    console.log("server running on " + port);
+  })
 })
