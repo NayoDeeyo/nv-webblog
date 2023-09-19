@@ -17,7 +17,7 @@ app.get("/status", function (req, res) {
 
 app.get("/hello/:name", function (req, res) {
   console.log("hello - " + req.params.name);
-  res.send("sey hello eith" + req.params.name);
+  res.send("sey hello with" + req.params.name);
 });
 
 let port = process.env.PORT || config.port
