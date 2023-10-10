@@ -31,7 +31,7 @@ export default {
       this.$router.push(route)
     },
     async deleteUser(user){
-      let result = confirm("Want of delete?")
+      let result = confirm("Want ot delete?")
       if (result){
         try{
           await UsersService.delete(user)
