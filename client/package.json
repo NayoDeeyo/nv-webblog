@@ -2,7 +2,7 @@
   "name": "nv-webblog-client",
   "version": "1.0.0",
   "description": "nodejs vuejs webblog client",
-  "author": "nattaponkum <nattaponk@nu.ac.th>",
+  "author": "nayo deeyo>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
