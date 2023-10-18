@@ -4,7 +4,7 @@
         <form v-on:submit.prevent="onLogin">
             <p>Username: <input type="text" v-model="email" /></p>
             <p>Password: <input type="password" v-model="password" /></p>
-            <p><button type="submit">Login</button></p>
+            <p><button type="submit">Login!</button></p>
             <div class="error" v-if="error">{{error}}</div>
         </form>
     </div>
